@@ -16,6 +16,11 @@ import { InMemoryDataService } from './in-memory-data.service';
 import { MessageService } from './message.service';
 import { HeroService } from './hero.service';
 import { LazyModuleRoutingModule } from './lazy-module/lazy-module-routing.module';
+import { ProductsService } from './services/products.service';
+import { EffectsModule } from '@ngrx/effects';
+import { StoreModule } from '@ngrx/store';
+import { Dataffects } from './store/effects/formly-table.effects';
+import { tableReducer } from './store/reducers/formly-table.reducers';
 
 @NgModule({
   declarations: [
@@ -37,8 +42,10 @@ import { LazyModuleRoutingModule } from './lazy-module/lazy-module-routing.modul
     HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {
       dataEncapsulation: false,
     }),
+    EffectsModule.forFeature([Dataffects]),
+    StoreModule.forFeature('tableReducer', tableReducer),
   ],
-  providers: [HeroService, MessageService],
+  providers: [HeroService, MessageService, ProductsService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

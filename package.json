@@ -19,6 +19,8 @@
     "@angular/platform-browser": "^14.2.0",
     "@angular/platform-browser-dynamic": "^14.2.0",
     "@angular/router": "^14.2.0",
+    "@ngrx/effects": "^15.0.0",
+    "@ngrx/store": "^15.0.0",
     "angular-in-memory-web-api": "^0.14.0",
     "ng-mocks": "^14.3.4",
     "rxjs": "~7.5.0",
