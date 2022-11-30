@@ -39,11 +39,12 @@ import { tableReducer } from './store/reducers/formly-table.reducers';
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {
-      dataEncapsulation: false,
-    }),
-    EffectsModule.forFeature([Dataffects]),
-    StoreModule.forFeature('tableReducer', tableReducer),
+
+    // StoreModule.forRoot({}),
+    // EffectsModule.forRoot(),
+
+    // EffectsModule.forFeature([Dataffects]),
+    // StoreModule.forFeature('tableReducer', tableReducer),
   ],
   providers: [HeroService, MessageService, ProductsService],
   bootstrap: [AppComponent],
