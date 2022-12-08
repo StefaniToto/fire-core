@@ -21,6 +21,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 import { Dataffects } from './store/effects/formly-table.effects';
 import { tableReducer } from './store/reducers/formly-table.reducers';
+import { ProductsListComponent } from './products-list/products-list.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { tableReducer } from './store/reducers/formly-table.reducers';
     HeroSearchComponent,
     StrengthPipe,
     HeroComponent,
+    ProductsListComponent,
   ],
   imports: [
     LazyModuleRoutingModule,
@@ -39,9 +41,12 @@ import { tableReducer } from './store/reducers/formly-table.reducers';
     BrowserModule,
     FormsModule,
     HttpClientModule,
+    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {
+      dataEncapsulation: false,
+    }),
 
-    // StoreModule.forRoot({}),
-    // EffectsModule.forRoot(),
+    StoreModule.forRoot({}),
+    EffectsModule.forRoot(),
 
     // EffectsModule.forFeature([Dataffects]),
     // StoreModule.forFeature('tableReducer', tableReducer),

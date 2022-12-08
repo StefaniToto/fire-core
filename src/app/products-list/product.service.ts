@@ -21,6 +21,13 @@ export class ProductService {
     );
   }
 
+  getProducts1(): Observable<Product[]> {
+    return this.http.get<any[]>(this.heroesUrl).pipe(
+      tap((heroes) => console.log(`fetched heroes`)),
+      catchError(this.handleError('getHeroes', []))
+    );
+  }
+
   /**
    * Handle Http operation that failed.
    * Let the app continue.

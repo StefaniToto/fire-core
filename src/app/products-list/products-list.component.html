@@ -1,9 +1,9 @@
 <h2>List all Products</h2>
 <button routerLink="add">+</button>
-<ul>
+<ul *ngIf="combineRes$ | async as combineRes">
   <li
     class="text"
-    *ngFor="let product of products | async"
+    *ngFor="let product of combineRes['d1']"
     data-test="show-subs"
   >
     <img
