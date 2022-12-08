@@ -13,27 +13,35 @@ import { ProductService } from './product.service';
 import { DOMHelper } from './dom-helper';
 import { Product } from './product.model';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { ProductService1 } from './product1.service';
 
 describe('ProductsListComponent aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', () => {
   let component: ProductsListComponent;
   let fixture: ComponentFixture<ProductsListComponent>;
   let dh: DOMHelper<ProductsListComponent>;
   let productServiceMock: jasmine.SpyObj<ProductService>;
+  let productServiceMock1: jasmine.SpyObj<ProductService1>;
   let helper: Helper;
   beforeEach(waitForAsync(() => {
     helper = new Helper();
     productServiceMock = jasmine.createSpyObj('ProductService', [
       'getProducts',
+    ]);
+    productServiceMock1 = jasmine.createSpyObj('ProductService1', [
       'getProducts1',
     ]);
     productServiceMock.getProducts.and.returnValue(of([]));
+    productServiceMock1.getProducts1.and.returnValue(of([]));
     // fixture = TestBed.createComponent(ProductsListComponent);
     // component = fixture.componentInstance;
 
     TestBed.configureTestingModule({
       declarations: [ProductsListComponent],
       imports: [RouterTestingModule],
-      providers: [{ provide: ProductService, useValue: productServiceMock }],
+      providers: [
+        { provide: ProductService, useValue: productServiceMock },
+        { provide: ProductService1, useValue: productServiceMock1 },
+      ],
       schemas: [NO_ERRORS_SCHEMA],
     }).compileComponents();
   }));
@@ -51,16 +59,16 @@ describe('ProductsListComponent aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', () 
   it('should initialize user and product data', fakeAsync(() => {
     // productServiceMock.getProducts.and.returnValue(of(helper.getProducts(1)));
     // productServiceMock.getProducts1.and.returnValue(of(helper.getProducts(1)));
-    component.products$ = helper.getProducts(1);
-    component.products1$ = helper.getProducts(1);
-    component.combineRes$ = helper.getProducts(1);
+    // component.products$ = helper.getProducts(1);
+    // component.products1$ = helper.getProducts(1);
+    // component.combineRes$ = helper.getProducts(1);
     // spyOn(productServiceMock, 'getProducts').and.returnValue(of([]));
-    // spyOn(productServiceMock, 'getProducts1').and.returnValue(of([]));
+    // spyOn(productServiceMock1, 'getProducts1').and.returnValue(of([]));
     tick();
-    // fixture.detectChanges();
+    fixture.detectChanges();
     component.combineRes$.subscribe({
       next: (v) => {
-        console.log('expect', v);
+        console.log('expecttttttttttttttttttttttttttttttttttttttttttttttt', v);
         expect(v.d1).toBeDefined();
         expect(v.d2).toBeDefined();
       },

@@ -22,6 +22,7 @@ import { StoreModule } from '@ngrx/store';
 import { Dataffects } from './store/effects/formly-table.effects';
 import { tableReducer } from './store/reducers/formly-table.reducers';
 import { ProductsListComponent } from './products-list/products-list.component';
+import { ProductService1 } from './products-list/product1.service';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,7 @@ import { ProductsListComponent } from './products-list/products-list.component';
     // EffectsModule.forFeature([Dataffects]),
     // StoreModule.forFeature('tableReducer', tableReducer),
   ],
-  providers: [HeroService, MessageService, ProductsService],
+  providers: [HeroService, MessageService, ProductsService, ProductService1],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

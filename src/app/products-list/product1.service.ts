@@ -11,10 +11,11 @@ const collection_path = 'products';
 @Injectable({
   providedIn: 'root',
 })
-export class ProductService {
+export class ProductService1 {
   constructor(private http: HttpClient) {}
   private heroesUrl = 'api/heroes';
-  getProducts(): Observable<Product[]> {
+
+  getProducts1(): Observable<Product[]> {
     return this.http.get<any[]>(this.heroesUrl).pipe(
       tap((heroes) => console.log(`fetched heroes`)),
       catchError(this.handleError('getHeroes', []))
