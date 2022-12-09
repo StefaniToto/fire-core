@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
 import { combineLatest, map, Observable, tap } from 'rxjs';
+import { dataTableFeatureState } from '../store/selectors/formly-table.selectors';
 import { Product } from './product.model';
 import { ProductService } from './product.service';
 import { ProductService1 } from './product1.service';
@@ -10,10 +12,12 @@ import { ProductService1 } from './product1.service';
   styleUrls: ['./products-list.component.scss'],
 })
 export class ProductsListComponent {
-  products$: Observable<Product[]> = this.ps
-    .getProducts()
-    .pipe(tap((x) => console.log(x, 'saaaa')));
+  products$: Observable<Product[]> = this.ps.getProducts();
+
   products1$: Observable<Product[]> = this.ps1.getProducts1();
+  pr2Store$: Observable<any> = this.store
+    .select(dataTableFeatureState)
+    .pipe(tap((x) => console.log('subscribePermission', x)));
 
   combineRes$: Observable<any> = combineLatest([
     this.products$,
@@ -27,6 +31,10 @@ export class ProductsListComponent {
     }),
     tap((x) => console.log(x, 'data, combined'))
   );
-
-  constructor(private ps: ProductService, private ps1: ProductService1) {}
+  deleteProduct(a) {}
+  constructor(
+    private ps: ProductService,
+    private ps1: ProductService1,
+    private store: Store<any>
+  ) {}
 }

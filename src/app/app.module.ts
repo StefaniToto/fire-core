@@ -49,8 +49,8 @@ import { ProductService1 } from './products-list/product1.service';
     StoreModule.forRoot({}),
     EffectsModule.forRoot(),
 
-    // EffectsModule.forFeature([Dataffects]),
-    // StoreModule.forFeature('tableReducer', tableReducer),
+    EffectsModule.forFeature([Dataffects]),
+    StoreModule.forFeature('tableReducer', tableReducer),
   ],
   providers: [HeroService, MessageService, ProductsService, ProductService1],
   bootstrap: [AppComponent],
