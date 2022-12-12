@@ -49,7 +49,7 @@ describe('ProductsListComponent aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', () 
       console.log(
         'show something here',
         fixture.debugElement.query(By.css('li')),
-        fixture.debugElement.query(By.css('li[data-test="show-subs"]'))
+        fixture.debugElement.query(By.css('li[data-test="ac-show-subs"]'))
       );
       expect(dh.count('.text')).toBe(1);
     });

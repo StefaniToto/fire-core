@@ -11,7 +11,7 @@ const dataTableState: DataTableState = {
   error: '',
 };
 
-export const tableReducer = createReducer<DataTableState>(
+export const dataReducer = createReducer<DataTableState>(
   dataTableState,
   on(DataTableActions.loadDataTableSuccess, (state, action): DataTableState => {
     return {

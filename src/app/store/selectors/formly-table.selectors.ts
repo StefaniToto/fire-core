@@ -1,8 +1,7 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
 import { DataTableState } from '../reducers/formly-table.reducers';
 
-const DataTableMainState =
-  createFeatureSelector<DataTableState>('tableReducer');
+const DataTableMainState = createFeatureSelector<DataTableState>('dataReducer');
 export const dataTableFeatureState = createSelector(
   DataTableMainState,
   (state) => {
