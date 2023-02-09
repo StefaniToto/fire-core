@@ -16,22 +16,17 @@ import { ProductsService } from './services/products.service';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { AppData } from './models/app-data';
 import { RouterModule, Routes } from '@angular/router';
-import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { ProductsListComponent } from './products-list/products-list.component';
-import { environment } from 'src/environments/environment';
-import { dataReducer } from './store/reducers/formly-table.reducers';
 import { Dataffects } from './store/effects/formly-table.effects';
-import { CustomModalComponent } from './custom-modal/custom-modal.component';
-import { DialogModule } from './custom-modal/dialog.module';
+import { ProductsListComponent } from './products-list/products-list.component';
+import { ProductService1 } from './products-list/product1.service';
+import { InMemoryDataService } from './in-memory-data.service';
 export const routes: Routes = [
-  { path: '', redirectTo: 'modal', pathMatch: 'full' },
+  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'detail/:id', component: HeroDetailComponent },
   { path: 'heroes', component: HeroesComponent },
   { path: 'product', component: ProductsListComponent },
-  { path: 'modal', component: CustomModalComponent },
   {
     path: 'lazy-module',
     loadChildren: () =>
@@ -50,25 +45,22 @@ export const routes: Routes = [
     HeroSearchComponent,
     StrengthPipe,
     HeroComponent,
+    ProductsListComponent,
   ],
   imports: [
-    DialogModule,
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    RouterModule.forRoot(routes),
-    StoreModule.forRoot({ dataReducer: dataReducer }),
-    EffectsModule.forRoot([Dataffects]),
-    StoreDevtoolsModule.instrument({
-      maxAge: 25,
-      logOnly: environment.production,
-    }),
-    HttpClientInMemoryWebApiModule.forRoot(AppData, {
-      delay: 1000,
+    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {
       dataEncapsulation: false,
     }),
+    RouterModule.forRoot([]),
+    StoreModule.forRoot({}),
+    EffectsModule.forRoot(),
+    EffectsModule.forFeature([Dataffects]),
+    // StoreModule.forFeature('tableReducer', tableReducer),
   ],
-  providers: [HeroService, MessageService, ProductsService],
+  providers: [HeroService, MessageService, ProductsService, ProductService1],
   bootstrap: [AppComponent],
   exports: [RouterModule],
 })
