@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
-  "npmScope": "share-the-house",
+  "npmScope": "code-from-root",
   "affected": {
     "defaultBase": "master"
   },

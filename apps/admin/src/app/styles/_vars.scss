@@ -1,0 +1,17 @@
+$darkBlue: #00204a;
+$blue: #005792;
+$lightBlue: #00d1ff;
+$babyBlue: #d9faff;
+$green: #00c9b1;
+$brightGreen: #45eba5;
+$orange: #fd5f00;
+$red: #e9290f;
+$yellow: #ffc300;
+$grey: #fafbff;
+$white: #ffffff;
+
+@mixin smoothTrans {
+  -webkit-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}

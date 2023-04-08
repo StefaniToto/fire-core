@@ -6,7 +6,7 @@
 
 ## Development server
 
-Run `nx serve share-the-house` for a dev server. Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
+Run `nx serve code-from-root` for a dev server. Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
 
 ## Understand this workspace
 

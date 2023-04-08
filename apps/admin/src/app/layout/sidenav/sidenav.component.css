@@ -1,0 +1,15 @@
+.nav-item :hover {
+  background: coral;
+  opacity: 0.9;
+}
+
+.nav-link {
+  font-size: 1.5em !important;
+  color: white;
+  text-shadow: 0 0 0 black;
+  font-style: inherit;
+}
+
+a.active {
+  background: coral !important;
+}
