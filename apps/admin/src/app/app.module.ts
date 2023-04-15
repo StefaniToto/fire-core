@@ -11,6 +11,11 @@ export const appRoutes: Route[] = [
     path: '',
     loadChildren: () => import('./home/home.module').then((m) => m.HomeModule),
   },
+  {
+    path: 'design',
+    loadChildren: () =>
+      import('./design/design.module').then((m) => m.DesignModule),
+  },
 ];
 @NgModule({
   declarations: [AppComponent, HeaderComponent, SidenavComponent],

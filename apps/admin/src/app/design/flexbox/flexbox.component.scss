@@ -1,0 +1,11 @@
+.flex-list {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  flex-wrap: nowrap; //wrap mexri kapou
+}
+
+.flex-list li {
+  //   flex-grow: 1;
+  flex-shrink: 0; //dont sqqash, overflow, dont shrink
+}

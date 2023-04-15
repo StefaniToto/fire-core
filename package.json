@@ -20,7 +20,6 @@
     "@nestjs/platform-express": "^9.0.0",
     "@ng-bootstrap/ng-bootstrap": "^14.1.0",
     "@nrwl/angular": "15.8.5",
-    "@popperjs/core": "^2.11.7",
     "@prisma/client": "^4.11.0",
     "axios": "^1.0.0",
     "bootstrap": "^5.2.3",

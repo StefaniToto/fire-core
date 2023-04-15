@@ -1,9 +1,22 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { DesignComponent } from './design.component';
-
+import { Route, RouterModule } from '@angular/router';
+import { FlexboxComponent } from './flexbox/flexbox.component';
+export const appRoutes: Route[] = [
+  // {
+  //   path: 'main',
+  //   loadComponent: () =>
+  //     import('./design.component').then((m) => m.DesignComponent),
+  // },
+  {
+    path: 'flexbox',
+    loadComponent: () =>
+      import('./flexbox/flexbox.component').then((m) => m.FlexboxComponent),
+  },
+];
 @NgModule({
-  declarations: [DesignComponent],
-  imports: [CommonModule],
+  declarations: [],
+  imports: [FlexboxComponent, RouterModule.forChild(appRoutes)],
+  exports: [RouterModule],
 })
 export class DesignModule {}

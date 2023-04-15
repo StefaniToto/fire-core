@@ -1,21 +1,21 @@
 <nav id="sidebar" [class.collapsed]="collapsed">
   <div class="header">
     <a href="index.html">
-      <img
+      <!-- <img
         src="//dev-sourcing.s3.amazonaws.com/assets/logowhite.svg"
         width="119px"
         alt="apiax logo"
         class="logoLarge"
-      />
+      /> -->
     </a>
   </div>
   <span class="divider"></span>
   <div class="userArea">
     <div class="userPicture">
-      <img
+      <!-- <img
         src="//dev-sourcing.s3.amazonaws.com/assets/picture@2x.jpg"
         alt="profile picture"
-      />
+      /> -->
     </div>
     <div class="userName">Toto</div>
     <div
@@ -31,16 +31,27 @@
     </div>
   </div>
   <span class="divider"></span>
+  <div *ngFor="let dummyObject of dummyObjectArray; let listIndex = index">
+    <div (click)="expandOrCollapseRow(listIndex)">
+      <div *ngIf="!dummyObject.expanded" class="myRowStyle">
+        <p>ID number: {{ dummyObject.id }}</p>
+      </div>
+      <div *ngIf="dummyObject.expanded" class="myRowStyle">
+        <p>ID number: {{ dummyObject.id }}</p>
+        <p>{{ dummyObject.color }}</p>
+        <p>{{ dummyObject.description }}</p>
+      </div>
+    </div>
+  </div>
   <ul class="navigation">
     <li>
+      <a routerLink="/design/flexbox" tooltip="Design Page"
+        ><i class="fa fa-user"></i><span>Design </span></a
+      >
+    </li>
+    <li>
       <a href="#" tooltip="Help & Faqs"
-        ><i
-          ><svg width="20" height="16" xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M20 1.341V0L10 1.36 0 0v14.64l9.632 1.31L10 16l.368-.05L20 14.64V2.683l-1.333.185V13.48l-8.003 1.089V2.612l8.003-1.088v.002L20 1.34zM9 15l-8-1.084V2l8 1.084V15z"
-              fill-rule="nonzero"
-            /></svg></i
-        ><span>Help & FAQs </span></a
+        ><i class="fa fa-user"></i><span>Help & FAQs </span></a
       >
     </li>
   </ul>
