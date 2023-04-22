@@ -16,6 +16,13 @@ export const appRoutes: Route[] = [
     loadChildren: () =>
       import('./design/design.module').then((m) => m.DesignModule),
   },
+  {
+    path: 'custom-web-elements',
+    loadChildren: () =>
+      import('./custom-web-elemenets/custom-web.module').then(
+        (m) => m.CustomWebelementModule
+      ),
+  },
 ];
 @NgModule({
   declarations: [AppComponent, HeaderComponent, SidenavComponent],

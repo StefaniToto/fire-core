@@ -1,4 +1,4 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Param } from '@nestjs/common';
 import { UserTableService } from './user-table.service';
 import { User } from '@prisma/client';
 
@@ -9,5 +9,10 @@ export class UserTableController {
   @Get()
   findAll(): Promise<User[]> {
     return this.userTableService.findAll();
+  }
+
+  @Get(':id')
+  findOne(@Param('id') id: string) {
+    return this.userTableService.findOne(+id);
   }
 }

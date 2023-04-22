@@ -9,42 +9,50 @@ export class SidenavComponent {
   public collapsed = false;
   public dummyObjectExpandedIndex: number = 0;
 
-  public dummyObjectArray: any = [
+  public navObjectArray: any = [
     {
-      id: 56,
-      color: 'blue',
-      description: 'this is anything blue',
+      description: 'Design',
+      path: '/design',
+      icon: 'fa fa-paint-brush',
+      subItems: [
+        {
+          description: 'Flex Box',
+          path: '/design/flexbox',
+        },
+        {
+          description: 'Inputs',
+          path: '/design/inputs',
+        },
+      ],
     },
     {
-      id: 63,
-      color: 'orange',
-      description: 'this is not usefull',
-    },
-    {
-      id: 72,
-      color: 'green',
-      description: 'this too',
-    },
-    {
-      id: 83,
-      color: 'red',
-      description: 'is this helpfull?',
+      description: 'Web elements',
+      path: '/custom-web-elements',
+      icon: 'fa fa-paint-brush',
+      subItems: [
+        {
+          description: 'Dropdown',
+          path: '/custom-web-elements/dropdown',
+        },
+      ],
     },
   ];
 
-  expandOrCollapseRow(listIndex: number): void {
-    const dummyObj = this.dummyObjectArray[listIndex];
+  expandOrCollapseRow(listIndex: number, expanded: any): void {
+    if (!expanded) {
+      const dummyObj = this.navObjectArray[listIndex];
 
-    // reset (collapses all objects in the array)
-    this.dummyObjectArray = this.dummyObjectArray.map((dummyObject: any) => ({
-      ...dummyObject,
-      expanded: false,
-    }));
+      // reset (collapses all objects in the array)
+      this.navObjectArray = this.navObjectArray.map((dummyObject: any) => ({
+        ...dummyObject,
+        expanded: false,
+      }));
 
-    // expands only the dummyObject clicked
-    this.dummyObjectArray[listIndex] = {
-      ...dummyObj,
-      expanded: !dummyObj.expanded,
-    };
+      // expands only the dummyObject clicked
+      this.navObjectArray[listIndex] = {
+        ...dummyObj,
+        expanded: !dummyObj.expanded,
+      };
+    }
   }
 }

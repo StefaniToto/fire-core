@@ -3,17 +3,12 @@ import { PrismaService } from '../prisma/prisma.service';
 import { User } from '@prisma/client';
 
 @Injectable()
-export class UserTableService {
+export class UsersService {
   constructor(private prisma: PrismaService) {}
-
-  findAll(): Promise<User[]> {
-    return this.prisma.user.findMany();
-  }
-
-  findOne(id: number) {
+  public async getByUsername(email: string): Promise<User> {
     return this.prisma.getOrThrowErrorIfNotFound(
       this.prisma.user.findUnique({
-        where: { id },
+        where: { email },
       })
     );
   }

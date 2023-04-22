@@ -1,0 +1,10 @@
+<p>dropdown works!</p>
+<div class="wrapper">
+  <button [dropdownTriggerFor]="dropdown" class="button">Open dropdown</button>
+
+  <my-dropdown #dropdown>
+    <div (click)="test()" class="dropdown-item">Cut</div>
+    <div (click)="test()" class="dropdown-item">Copy</div>
+    <div (click)="test()" class="dropdown-item">Paste</div>
+  </my-dropdown>
+</div>

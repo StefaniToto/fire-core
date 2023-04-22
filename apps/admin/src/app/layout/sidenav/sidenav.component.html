@@ -31,19 +31,28 @@
     </div>
   </div>
   <span class="divider"></span>
-  <div *ngFor="let dummyObject of dummyObjectArray; let listIndex = index">
-    <div (click)="expandOrCollapseRow(listIndex)">
-      <div *ngIf="!dummyObject.expanded" class="myRowStyle">
-        <p>ID number: {{ dummyObject.id }}</p>
+  <ul
+    class="navigation"
+    *ngFor="let navItem of navObjectArray; let listIndex = index"
+  >
+    <li (click)="expandOrCollapseRow(listIndex, navItem.expanded)">
+      <div *ngIf="!navItem.expanded">
+        <a routerLink="{{ navItem.path }}"
+          ><i class="{{ navItem.icon }}"></i>
+          {{ navItem.description }}
+        </a>
       </div>
-      <div *ngIf="dummyObject.expanded" class="myRowStyle">
-        <p>ID number: {{ dummyObject.id }}</p>
-        <p>{{ dummyObject.color }}</p>
-        <p>{{ dummyObject.description }}</p>
+      <div *ngIf="navItem.expanded">
+        <a routerLink="{{ navItem.path }}"
+          ><i class="{{ navItem.icon }}"></i>{{ navItem.description }}</a
+        >
+        <div *ngFor="let item of navItem?.subItems" class="subItemNav">
+          <a routerLink="{{ item.path }}"> - {{ item.description }}</a>
+        </div>
       </div>
-    </div>
-  </div>
-  <ul class="navigation">
+    </li>
+  </ul>
+  <!-- <ul class="navigation">
     <li>
       <a routerLink="/design/flexbox" tooltip="Design Page"
         ><i class="fa fa-user"></i><span>Design </span></a
@@ -54,7 +63,7 @@
         ><i class="fa fa-user"></i><span>Help & FAQs </span></a
       >
     </li>
-  </ul>
+  </ul> -->
   <div
     class="expandBtn"
     [class.fa-compress]="!collapsed"
