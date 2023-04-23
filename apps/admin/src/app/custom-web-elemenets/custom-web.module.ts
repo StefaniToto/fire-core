@@ -1,12 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Route, RouterModule } from '@angular/router';
-import { DropdownComponentPage } from './dropdown/dropdown.component';
+import { FormsModule } from '@angular/forms';
+import { OverlayModule } from '@angular/cdk/overlay';
 export const appRoutes: Route[] = [
-  // {
-  //   path: 'main',
-  //   loadComponent: () =>
-  //     import('./design.component').then((m) => m.DesignComponent),
-  // },
   {
     path: 'dropdown',
     loadComponent: () =>
@@ -14,10 +10,15 @@ export const appRoutes: Route[] = [
         (m) => m.DropdownComponentPage
       ),
   },
+  {
+    path: 'view-ref',
+    loadComponent: () =>
+      import('./view-ref/view-ref.component').then((m) => m.ViewRefComponent),
+  },
 ];
 @NgModule({
   declarations: [],
-  imports: [DropdownComponentPage, RouterModule.forChild(appRoutes)],
+  imports: [RouterModule.forChild(appRoutes), FormsModule, OverlayModule],
   exports: [RouterModule],
 })
 export class CustomWebelementModule {}

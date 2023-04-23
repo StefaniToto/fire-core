@@ -34,3 +34,22 @@
 .active {
   background-color: blue;
 }
+
+//center elements
+parent {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+parent {
+  display: grid;
+  child {
+    margin: auto;
+  }
+}
+
+parent {
+  display: grid;
+  place-items: center;
+}

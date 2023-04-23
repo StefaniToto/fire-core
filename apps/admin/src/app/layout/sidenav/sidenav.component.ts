@@ -34,6 +34,10 @@ export class SidenavComponent {
           description: 'Dropdown',
           path: '/custom-web-elements/dropdown',
         },
+        {
+          description: 'View-Ref',
+          path: '/custom-web-elements/view-ref',
+        },
       ],
     },
   ];

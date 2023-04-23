@@ -11,7 +11,7 @@ import { DropdownPanel } from './dropdown-panel';
   selector: 'my-dropdown',
   templateUrl: './dropdown.html',
   standalone: true,
-  styleUrls: ['./dropdown.component.css'],
+  styleUrls: ['./dropdown.component.scss'],
 })
 export class DropdownComponent implements DropdownPanel {
   @ViewChild(TemplateRef) templateRef: TemplateRef<any>;
