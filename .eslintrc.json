@@ -19,8 +19,14 @@
             ]
           }
         ],
-        "no-inferrable-types": false,
-        "directive-selector": [true, "attribute", "app", "camelCase"]
+        "no-inferrable-types": 0,
+        "directive-selector": [0, "attribute", "app", "camelCase"],
+        "@typescript-eslint/no-inferrable-types": [
+          2,
+          {
+            "ignoreParameters": true
+          }
+        ]
       }
     },
     {

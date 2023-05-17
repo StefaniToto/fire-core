@@ -4,7 +4,6 @@ import { HeaderComponent } from './layout/header/header.component';
 import { SidenavComponent } from './layout/sidenav/sidenav.component';
 import { NgModule } from '@angular/core';
 import { Route, RouterModule } from '@angular/router';
-import { NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
 export const appRoutes: Route[] = [
   {
@@ -27,7 +26,6 @@ export const appRoutes: Route[] = [
 @NgModule({
   declarations: [AppComponent, HeaderComponent, SidenavComponent],
   imports: [
-    NgbCollapseModule,
     FormsModule,
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     RouterModule.forRoot(appRoutes, {

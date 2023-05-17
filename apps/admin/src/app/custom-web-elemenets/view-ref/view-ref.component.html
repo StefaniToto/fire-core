@@ -1,19 +1,14 @@
-<p>view-ref works!</p>
+<p>ViewRef</p>
 
 <button type="button" (click)="append(template)">
   Click To append new ViewRef
 </button>
 <button type="button" (click)="clear()">Click to clear</button>
 <ng-template #template let-num
-  ><div style="padding: 10px 20px">{{ num }}</div></ng-template
+  ><div style="padding: 10px 20px">Adding number {{ num }}</div></ng-template
 >
-<br />
-<hr />
-<br />
-<hr />
-<br />
-<hr />
-<div>
+
+<!-- <div>
   <button
     *ngIf="viewContainerRef.length === 0"
     type="button"
@@ -34,4 +29,4 @@
       <dd>click to make it yellow</dd>
     </dl></ng-template
   >
-</div>
+</div> -->
