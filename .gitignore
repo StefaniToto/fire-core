@@ -2,6 +2,7 @@
 
 # compiled output
 dist
+build
 tmp
 /out-tsc
 
@@ -41,11 +42,3 @@ Thumbs.db
 .angular
 
 
-
-.yarn/*
-!.yarn/cache
-!.yarn/patches
-!.yarn/plugins
-!.yarn/releases
-!.yarn/sdks
-!.yarn/versions

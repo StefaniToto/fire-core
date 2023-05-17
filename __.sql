@@ -16,7 +16,7 @@ docker ps
 --start the app
 nx serve admin-backend
 nx serve admin
-evdev:fe
+ npx nx run-many --target=build --all
 ----------- create tables on db
 npx prisma migrate dev --name init
 npx prisma studio
