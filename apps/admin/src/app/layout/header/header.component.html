@@ -1,6 +1,7 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav id="nav" class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="#">Navbar</a>
   <button
+    *ngIf="!isCollapsed"
     class="navbar-toggler"
     type="button"
     data-toggle="collapse"
@@ -30,11 +31,11 @@
         <a class="nav-link" href="#">About</a>
       </li>
     </ul>
-    <form style="display: flex" class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="text" placeholder="Search" />
-      <button class="btn btn-secondary my-2 my-sm-0" type="submit">
-        Search
-      </button>
-    </form>
   </div>
 </nav>
+<div id="search">
+  <form>
+    <input class="form-control mr-sm-2" type="text" placeholder="Search" />
+    <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+  </form>
+</div>

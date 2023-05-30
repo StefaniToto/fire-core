@@ -1,0 +1,32 @@
+<p>ViewRef</p>
+
+<button type="button" (click)="append(template)">
+  Click To append new ViewRef
+</button>
+<button type="button" (click)="clear()">Click to clear</button>
+<ng-template #template let-num
+  ><div style="padding: 10px 20px">Adding number {{ num }}</div></ng-template
+>
+
+<!-- <div>
+  <button
+    *ngIf="viewContainerRef.length === 0"
+    type="button"
+    (click)="reattach()"
+  >
+    Click To insert
+  </button>
+  <button
+    *ngIf="viewContainerRef.length === 1"
+    type="button"
+    (click)="detach()"
+  >
+    Click to detach
+  </button>
+  <ng-template #template2 let-num
+    ><dl>
+      <dt>View Kept</dt>
+      <dd>click to make it yellow</dd>
+    </dl></ng-template
+  >
+</div> -->

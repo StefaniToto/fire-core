@@ -28,6 +28,9 @@ npx prisma studio
 
  ------ frontend generate stuff
  nx g c sidenav --skip-import
+ nx g @nx/angular:component my-component
+ nx g @nrwl/angular:component mapping --project=admin
+
 
 
 ------precommits and linting===================

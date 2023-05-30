@@ -1,5 +1,6 @@
 #wrapper {
-  display: flex;
+  display: grid;
+  grid-template-columns: auto 1fr;
 }
 
 #content {
@@ -8,4 +9,8 @@
 
 .navbar-collapse {
   justify-content: space-between;
+}
+
+body {
+  margin: 0;
 }

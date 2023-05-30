@@ -13,12 +13,19 @@ export const appRoutes: Route[] = [
   {
     path: 'design',
     loadChildren: () =>
-      import('./design/design.module').then((m) => m.DesignModule),
+      import('./design-module/design.module').then((m) => m.DesignModule),
   },
   {
     path: 'custom-web-elements',
     loadChildren: () =>
-      import('./custom-web-elemenets/custom-web.module').then(
+      import('./custom-web-elemenets-module/custom-web.module').then(
+        (m) => m.CustomWebelementModule
+      ),
+  },
+  {
+    path: 'mapping',
+    loadChildren: () =>
+      import('./mapping-module/custom-web.module').then(
         (m) => m.CustomWebelementModule
       ),
   },
