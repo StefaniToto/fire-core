@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { DesignComponent } from './design.component';
 import { Route, RouterModule } from '@angular/router';
 import { FlexboxComponent } from './flexbox/flexbox.component';
 export const appRoutes: Route[] = [

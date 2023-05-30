@@ -9,7 +9,7 @@ export const appRoutes: Route[] = [
     path: 'dropdown',
     loadComponent: () =>
       import('./dropdown/dropdown.component').then(
-        (m) => m.DropdownComponentPage
+        (m) => m.DropdownPageComponent,
       ),
   },
   {

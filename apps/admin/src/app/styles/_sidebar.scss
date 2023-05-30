@@ -1,15 +1,19 @@
 #sidebar {
   @include smoothTrans;
+
   background-color: $darkBlue;
   background: linear-gradient(180deg, #0072c0 15%, $darkBlue 100%);
   height: 100vh;
   min-width: 218px;
+
   .header {
     text-align: center;
+
     img {
       margin: 20px 0;
       @include smoothTrans;
     }
+
     .logoSmall {
       width: 28px;
       display: none;
@@ -19,7 +23,7 @@
 
 .divider {
   display: block;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgb(255 255 255 / 10%);
   width: 170px;
   margin: 0 auto;
 }
@@ -28,8 +32,10 @@
   padding: 16px 0;
   max-width: 160px;
   margin: 0 auto;
+
   .userPicture {
     @include smoothTrans;
+
     margin: 0 auto;
     border-radius: 100%;
     max-width: 54px;
@@ -37,23 +43,22 @@
     position: relative;
     width: 100%;
     border: 2px solid $babyBlue;
-    -webkit-box-shadow: 0px 1px 10px 0px rgba(43, 52, 70, 0.3);
-    -moz-box-shadow: 0px 1px 10px 0px rgba(43, 52, 70, 0.3);
-    box-shadow: 0px 1px 10px 0px rgba(43, 52, 70, 0.3);
-    &:after {
-      content: '';
+    box-shadow: 0 1px 10px 0 rgb(43 52 70 / 30%);
+
+    &::after {
+      content: "";
       display: block;
       padding-bottom: 100%;
     }
+
     img {
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      -webkit-transform: translateY(-50%);
-      -ms-transform: translateY(-50%);
       width: 100%;
     }
   }
+
   .userName {
     color: $white;
     font-size: 0.88em;
@@ -65,24 +70,30 @@
     white-space: nowrap;
     text-overflow: ellipsis;
   }
+
   .accountMenu {
     color: $white;
     opacity: 0.5;
     font-size: 1.2em;
     text-align: center;
     @include smoothTrans;
+
     margin: 6px auto;
     display: block;
+
     &:hover,
     &.active {
       opacity: 1;
-      text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.8);
+      text-shadow: 0 0 10px rgb(255 255 255 / 80%);
     }
+
     .menu {
       left: 31px;
+
       .item {
         color: $darkBlue;
         @include smoothTrans;
+
         &:hover {
           color: $darkBlue;
         }
@@ -96,6 +107,7 @@ ul.navigation {
   padding: 0;
   color: white;
   margin-bottom: 0;
+
   li {
     a {
       text-decoration: none;
@@ -105,34 +117,39 @@ ul.navigation {
       display: block;
       border-left: 3px solid transparent;
       @include smoothTrans;
+
       &:hover,
       &.active {
-        background-color: rgba(0, 32, 74, 0.4);
+        background-color: rgb(0 32 74 / 40%);
       }
+
       &.active {
         border-color: $brightGreen;
         color: $brightGreen;
+
         svg {
           fill: $brightGreen;
         }
       }
+
       i {
         margin-right: 12px;
+
         svg {
           fill: $white;
           vertical-align: middle;
           margin-top: -5px;
         }
       }
+
       span {
         visibility: visible;
         opacity: 1;
-        -webkit-transition: opacity 0.2s, visibility 0.2s;
         transition: opacity 0.2s, visibility 0.2s;
-        -ms-transition: opacity 0.2s, visibility 0.2s;
       }
     }
   }
+
   .divider {
     margin: 12px auto;
   }
@@ -146,16 +163,16 @@ ul.navigation {
   cursor: pointer;
   bottom: 0;
   width: 218px;
+
   i {
     cursor: pointer;
     opacity: 0.5;
     @include smoothTrans;
+
     &:hover {
       opacity: 1;
-      text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.8);
+      text-shadow: 0 0 10px rgb(255 255 255 / 80%);
       transform: scale(1.2, 1.2);
-      -webkit-transform: scale(1.2, 1.2);
-      -ms-transform: scale(1.2, 1.2);
     }
   }
 }
@@ -163,46 +180,52 @@ ul.navigation {
 #sidebar.collapsed {
   min-width: 64px;
   max-width: 64px;
+
   ul.navigation {
     li {
       a {
         padding: 11px 20px;
       }
+
       span {
         visibility: hidden;
         opacity: 0;
         position: absolute;
-        -webkit-transition: opacity 0.2s, visibility 0.2s;
         transition: opacity 0.2s, visibility 0.2s;
-        -ms-transition: opacity 0.2s, visibility 0.2s;
       }
     }
   }
+
   .expandBtn {
     width: 64px;
   }
+
   .divider {
     width: 20px;
     display: block;
   }
+
   .userPicture {
     transform: scale(0.8, 0.8);
-    -webkit-transform: scale(0.8, 0.8);
-    -ms-transform: scale(0.8, 0.8);
   }
+
   .logoSmall {
     display: block;
     margin: 20px auto;
   }
+
   .logoLarge {
     display: none;
   }
+
   .userArea {
     padding: 16px 4px;
+
     .userName {
       font-size: 0.75em;
     }
   }
+
   .userArea .accountMenu {
     position: relative;
     left: 0;

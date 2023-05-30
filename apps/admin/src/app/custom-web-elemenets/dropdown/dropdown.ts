@@ -8,7 +8,7 @@ import {
 import { DropdownPanel } from './dropdown-panel';
 
 @Component({
-  selector: 'my-dropdown',
+  selector: 'app-dropdown',
   templateUrl: './dropdown.html',
   standalone: true,
   styleUrls: ['./dropdown.component.scss'],
@@ -16,6 +16,4 @@ import { DropdownPanel } from './dropdown-panel';
 export class DropdownComponent implements DropdownPanel {
   @ViewChild(TemplateRef) templateRef: TemplateRef<any>;
   @Output() closed = new EventEmitter<void>();
-
-  constructor() {}
 }

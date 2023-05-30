@@ -4,31 +4,32 @@ import {
   Input,
   OnDestroy,
   ViewContainerRef,
+  HostListener,
+  inject,
 } from '@angular/core';
 import { Overlay, OverlayRef } from '@angular/cdk/overlay';
 import { DropdownPanel } from './dropdown-panel';
 import { Observable, Subscription, merge } from 'rxjs';
 import { TemplatePortal } from '@angular/cdk/portal';
 @Directive({
-  selector: '[dropdownTriggerFor]',
-  host: {
-    '(click)': 'toggleDropdown()',
-  },
+  selector: '[app-dropdownTriggerFor]',
+  // host: {
+  //   '(click)': 'toggleDropdown()',
+  // },
   standalone: true,
 })
-export class DropdownTriggerForDirective implements OnDestroy {
+export class DropdownTriggerDirective implements OnDestroy {
+  @HostListener('click') toggleDropdown() {
+    this.isDropdownOpen ? this.destroyDropdown() : this.openDropdown();
+  }
   private isDropdownOpen = false;
   private overlayRef: OverlayRef;
   private dropdownClosingActionsSub = Subscription.EMPTY;
-  @Input('dropdownTriggerFor') public dropdownPanel: DropdownPanel;
-  constructor(
-    private overlay: Overlay,
-    private elementRef: ElementRef<HTMLElement>,
-    private viewContainerRef: ViewContainerRef
-  ) {}
-  toggleDropdown(): void {
-    this.isDropdownOpen ? this.destroyDropdown() : this.openDropdown();
-  }
+  @Input('app-dropdownTriggerFor') public dropdownPanel: DropdownPanel;
+
+  private readonly overlay = inject(Overlay);
+  private readonly viewContainerRef = inject(ViewContainerRef);
+  private readonly elementRef = inject(ElementRef<HTMLElement>);
 
   openDropdown(): void {
     this.isDropdownOpen = true;

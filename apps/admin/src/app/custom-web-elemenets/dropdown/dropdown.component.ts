@@ -4,30 +4,25 @@ import {
   TemplateRef,
   ViewChild,
   ViewContainerRef,
+  inject,
 } from '@angular/core';
-import { DropdownTriggerForDirective } from './dropdown-trigger-directive';
+import { DropdownTriggerDirective } from './dropdown-trigger-directive';
 import { DropdownComponent } from './dropdown';
-import {
-  CdkConnectedOverlay,
-  Overlay,
-  OverlayModule,
-  OverlayRef,
-} from '@angular/cdk/overlay';
+import { Overlay, OverlayModule, OverlayRef } from '@angular/cdk/overlay';
 import { TemplatePortal } from '@angular/cdk/portal';
 
 @Component({
-  selector: 'code-from-root-dropdown',
+  selector: 'app-from-root-dropdown',
   templateUrl: './dropdown.component.html',
   standalone: true,
   styleUrls: ['./dropdown.component.scss'],
-  imports: [DropdownTriggerForDirective, DropdownComponent, OverlayModule],
+  imports: [DropdownTriggerDirective, DropdownComponent, OverlayModule],
 })
-export class DropdownComponentPage {
-  constructor(
-    private _overlay: Overlay,
-    private _viewContainerRef: ViewContainerRef
-  ) {}
+export class DropdownPageComponent {
   isOpen = false;
+
+  private readonly _overlay = inject(Overlay);
+  private readonly _viewContainerRef = inject(ViewContainerRef);
 
   @ViewChild('btn3') button: ElementRef;
   @ViewChild('templ') content: TemplateRef<any>;

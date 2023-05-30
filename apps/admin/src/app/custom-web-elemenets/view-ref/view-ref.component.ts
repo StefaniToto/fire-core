@@ -5,10 +5,11 @@ import {
   TemplateRef,
   ViewChild,
   ViewContainerRef,
+  inject,
 } from '@angular/core';
 
 @Component({
-  selector: 'code-from-root-view-ref',
+  selector: 'app-from-root-view-ref',
   templateUrl: './view-ref.component.html',
   standalone: true,
   styleUrls: ['./view-ref.component.scss'],
@@ -19,7 +20,8 @@ export class ViewRefComponent implements AfterViewInit {
   i = 0;
 
   vr: any;
-  constructor(public viewContainerRef: ViewContainerRef) {}
+  private readonly viewContainerRef = inject(ViewContainerRef);
+
   append(template: TemplateRef<{ $implicit: number }>) {
     this.viewContainerRef.createEmbeddedView(template, {
       $implicit: this.i++,

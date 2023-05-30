@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class SidenavComponent {
   public collapsed = false;
-  public dummyObjectExpandedIndex: number = 0;
+  public dummyObjectExpandedIndex = 0;
 
   public navObjectArray: any = [
     {

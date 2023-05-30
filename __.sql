@@ -30,4 +30,6 @@ npx prisma studio
  nx g c sidenav --skip-import
 
 
+------precommits and linting===================
+npx husky-init && pnpm install 
 
