@@ -36,3 +36,5 @@ npx prisma studio
 ------precommits and linting===================
 npx husky-init && pnpm install 
 
+-----------run app-------------------------------
+nx run admin:serve

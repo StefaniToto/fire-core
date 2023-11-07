@@ -40,6 +40,17 @@ export class SidenavComponent {
         },
       ],
     },
+    {
+      description: 'Angular',
+      path: '/angular',
+      icon: 'fa fa-paint-brush',
+      subItems: [
+        {
+          description: 'rxjs',
+          path: '/angular/rxjs',
+        },
+      ],
+    },
   ];
 
   expandOrCollapseRow(listIndex: number, expanded: any): void {

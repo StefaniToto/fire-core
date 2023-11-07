@@ -23,10 +23,10 @@ export const appRoutes: Route[] = [
       ),
   },
   {
-    path: 'mapping',
-    loadChildren: () =>
-      import('./mapping-module/custom-web.module').then(
-        (m) => m.CustomWebelementModule
+    path: 'angular/rxjs',
+    loadComponent: () =>
+      import('./rxjs-tutorial/rxjs-tutorial.component').then(
+        (m) => m.RxjsTutorialComponent
       ),
   },
 ];

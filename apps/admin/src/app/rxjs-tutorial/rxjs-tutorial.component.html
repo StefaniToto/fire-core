@@ -1,0 +1,42 @@
+<!--<p>rxjs-tutorial works!</p>-->
+
+
+<!--<h1> Transform streams using map, pluck, and map</h1>-->
+
+
+<!--<h1>creation operations</h1>-->
+<!--&lt;!&ndash;<p> {{timer$ }} timer</p>&ndash;&gt;-->
+<!--&lt;!&ndash;<p> {{interval$ }} interval$</p>&ndash;&gt;-->
+
+<!--<h1>transfor streams</h1>-->
+<!--<p> Map </p>-->
+<!--<p> {{keyup$ | async}} </p>-->
+<!--<p> {{keyCode$ }} </p>-->
+
+|Search
+<input id='search' type='search' placeholder='Search'/>
+
+
+<ng-container [ngSwitch]="active">
+  <ng-container *ngSwitchCase="activeLayou.success" [ngTemplateOutlet]="template1"></ng-container>
+  <ng-container *ngSwitchCase="activeLayou.failure" [ngTemplateOutlet]="template2"></ng-container>
+  <ng-container *ngSwitchDefault [ngTemplateOutlet]="defaultTemplate"></ng-container>
+</ng-container>
+
+<ng-template #template1 >
+  <h1>template 111111111</h1>
+</ng-template>
+
+<ng-template #template2 >
+  <h1>template 2222222222</h1>
+</ng-template>
+
+<ng-template #defaultTemplate >
+  <h1>template default</h1>
+</ng-template>
+
+
+<div *ngIf='dataObs$ | async as dataObs'>
+  {{dataObs | json}}
+</div>
+
