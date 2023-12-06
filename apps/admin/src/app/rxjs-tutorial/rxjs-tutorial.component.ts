@@ -14,8 +14,8 @@ import {
   of,
   pluck,
   switchMap,
+  take,
   tap,
-  timer,
 } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { ajax } from 'rxjs/internal/ajax/ajax';
@@ -101,18 +101,39 @@ export class RxjsTutorialComponent implements OnInit {
     // this.activeLayou = DialogState;
   }
   ngOnInit() {
-    this.input$
-      .pipe(
-        debounceTime(200),
-        pluck('target', 'value'),
-        distinctUntilChanged(),
-        switchMap((searchTerm) => {
-          console.log(searchTerm);
-          if (String(searchTerm).length >= 3)
-            return ajax.getJSON(`${this.API}?by_name=test`);
-          else return of(searchTerm);
-        })
-      )
-      .subscribe((res) => console.log(res));
+    // this.input$
+    //   .pipe(
+    //     debounceTime(200),
+    //     pluck('target', 'value'),
+    //     distinctUntilChanged(),
+    //     switchMap((searchTerm) => {
+    //       console.log(searchTerm);
+    //       if (String(searchTerm).length >= 3)
+    //         return ajax.getJSON(`${this.API}?by_name=test`);
+    //       else return of(searchTerm);
+    //     })
+    //   )
+    //   .subscribe((res) => console.log(res));
+
+    // this.input$.pipe(debounceTime(1000)).subscribe(console.log);
+
+    this.source$
+      .pipe(switchMap(this.promiseDelay))
+      .subscribe((c) => console.log(c));
+  }
+
+  click$ = fromEvent(document, 'click');
+
+  // debounce time operator
+
+  source$ = interval(1000).pipe(
+    take(10),
+    map((x) => x * 100)
+  );
+
+  promiseDelay(ms: number): Promise<any> {
+    return new Promise((resolve) => {
+      setTimeout(() => resolve('done'), ms);
+    });
   }
 }

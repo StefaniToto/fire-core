@@ -23,7 +23,7 @@
         "styles": [
           "apps/admin/src/styles.scss",
           "apps/admin/src/app/styles/style.scss",
-      
+
         ],
         "scripts": []
       },

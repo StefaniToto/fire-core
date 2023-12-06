@@ -42,7 +42,7 @@ export class SidenavComponent {
     },
     {
       description: 'Angular',
-      path: '/angular',
+      path: '/angular/rxjs',
       icon: 'fa fa-paint-brush',
       subItems: [
         {

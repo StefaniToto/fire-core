@@ -13,9 +13,15 @@
 <!--<p> {{keyup$ | async}} </p>-->
 <!--<p> {{keyCode$ }} </p>-->
 
+
+<h1> Rate limiting operators</h1>
+
+<p> debounce time</p>
+
 |Search
 <input id='search' type='search' placeholder='Search'/>
 
+<!--<ng-container *ngIf='input$ | async'></ng-container>-->
 
 <ng-container [ngSwitch]="active">
   <ng-container *ngSwitchCase="activeLayou.success" [ngTemplateOutlet]="template1"></ng-container>
