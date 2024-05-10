@@ -1,0 +1,16 @@
+#wrapper {
+  display: grid;
+  grid-template-columns: auto 1fr;
+}
+
+#content {
+  width: 100%;
+}
+
+.navbar-collapse {
+  justify-content: space-between;
+}
+
+body {
+  margin: 0;
+}

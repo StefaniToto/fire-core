@@ -1,0 +1,31 @@
+#nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+ul.navbar-nav {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  color: white;
+  margin-bottom: 0;
+
+  li {
+    a {
+      text-decoration: none;
+      display: block;
+      padding: 11px 24px;
+      border-left: 3px solid transparent;
+
+      &:hover,
+      &.active {
+        background-color: rgb(0 32 74 / 40%);
+      }
+    }
+  }
+}
+
+#search {
+  display: block;
+  text-align: center;
+}

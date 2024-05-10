@@ -1,0 +1,77 @@
+<nav id="sidebar" [class.collapsed]="collapsed">
+
+  
+  <div class="header">
+    <a href="index.html">
+      <!-- <img
+        src="//dev-sourcing.s3.amazonaws.com/assets/logowhite.svg"
+        width="119px"
+        alt="apiax logo"
+        class="logoLarge"
+      /> -->
+    </a>
+  </div>
+  <span class="divider"></span>
+  <div class="userArea">
+    <div class="userPicture">
+      <!-- <img
+        src="//dev-sourcing.s3.amazonaws.com/assets/picture@2x.jpg"
+        alt="profile picture"
+      /> -->
+    </div>
+    <div class="userName">Toto</div>
+    <div
+      class="ui pointing dropdown accountMenu"
+      suiDropdown
+      autoClose="outsideClick"
+    >
+      <div class="text"><i class="fa fa-cogs"></i></div>
+      <div class="menu" suiDropdownMenu>
+        <div class="item"><i class="fa fa-user"></i> Profile</div>
+        <div class="item"><i class="fa fa-sign-out"></i> Sign out</div>
+      </div>
+    </div>
+  </div>
+  <span class="divider"></span>
+  <ul
+    class="navigation"
+    *ngFor="let navItem of navObjectArray; let listIndex = index"
+  >
+    <li (click)="expandOrCollapseRow(listIndex, navItem.expanded)">
+      <div *ngIf="!navItem.expanded">
+        <a routerLink="{{ navItem.path }}"
+          ><i class="{{ navItem.icon }}"></i>
+          {{ navItem.description }}
+        </a>
+      </div>
+      <div *ngIf="navItem.expanded">
+        <a routerLink="{{ navItem.path }}"
+          ><i class="{{ navItem.icon }}"></i>{{ navItem.description }}</a
+        >
+        <div *ngFor="let item of navItem?.subItems" class="subItemNav">
+          <a routerLink="{{ item.path }}"> - {{ item.description }}</a>
+        </div>
+      </div>
+    </li>
+  </ul>
+  <!-- <ul class="navigation">
+    <li>
+      <a routerLink="/design/flexbox" tooltip="Design Page"
+        ><i class="fa fa-user"></i><span>Design </span></a
+      >
+    </li>
+    <li>
+      <a href="#" tooltip="Help & Faqs"
+        ><i class="fa fa-user"></i><span>Help & FAQs </span></a
+      >
+    </li>
+  </ul> -->
+  <div
+    class="expandBtn"
+    [class.fa-compress]="!collapsed"
+    [class.fa-expand]="collapsed"
+    (click)="collapsed = !collapsed"
+  >
+    <span id="sidebarCollapse">Collapse </span>
+  </div>
+</nav>

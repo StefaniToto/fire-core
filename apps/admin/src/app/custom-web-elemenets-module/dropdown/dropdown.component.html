@@ -1,0 +1,59 @@
+<p>dropdown works!</p>
+<div>
+  <!-- <button [app-dropdownTriggerFor]="dropdown" class="button">
+    Open dropdown
+  </button>
+
+  <my-dropdown #dropdown>
+    <div class="dropdown-item">Cut</div>
+    <div class="dropdown-item">Copy</div>
+    <div class="dropdown-item">Paste</div>
+  </my-dropdown> -->
+</div>
+<br />
+<hr />
+<br />
+<hr />
+<br />
+<hr />
+<br />
+<hr />
+<br />
+<hr />
+
+<button (click)="isOpen = !isOpen" cdkOverlayOrigin #trigger="cdkOverlayOrigin">
+  Open/close overlay
+</button>
+{{ isOpen }}
+This template displays something. Not good when you want to re-click to the button
+<ng-template
+  cdkConnectedOverlay
+  [cdkConnectedOverlayOrigin]="trigger"
+  [cdkConnectedOverlayOpen]="isOpen"
+  (overlayOutsideClick)="isOpen = !isOpen"
+>
+  <ul class="example-overlay">
+    <li (click)="isOpen = !isOpen">Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+  </ul>
+</ng-template>
+
+<br />
+<hr />
+<br />
+<hr />
+<br />
+<hr />
+<br />
+<hr />
+<br />
+<hr />
+
+<button #btn3 (click)="open()" #button>Open a menu</button>
+
+<ng-template #templ>
+  <div class="menu-panel">
+    <h3 (click)="close()">Something to add and hide</h3>
+  </div>
+</ng-template>
