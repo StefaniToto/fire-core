@@ -9,10 +9,11 @@ import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'code-from-root-auxilary-page',
-  templateUrl: './auxilary-page.component.html',
-  styleUrls: ['./auxilary-page.component.css'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'code-from-root-auxilary-page',
+    templateUrl: './auxilary-page.component.html',
+    styleUrls: ['./auxilary-page.component.css'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class AuxilaryPageComponent implements OnInit {
   @HostBinding('class.mat-elevation-z2') hostCls = true;

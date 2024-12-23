@@ -9,11 +9,10 @@ import {
 } from '@angular/core';
 
 @Component({
-  selector: 'app-from-root-view-ref',
-  templateUrl: './view-ref.component.html',
-  standalone: true,
-  styleUrls: ['./view-ref.component.scss'],
-  imports: [NgFor, JsonPipe, AsyncPipe, NgIf],
+    selector: 'app-from-root-view-ref',
+    templateUrl: './view-ref.component.html',
+    styleUrls: ['./view-ref.component.scss'],
+    imports: [NgFor, JsonPipe, AsyncPipe, NgIf]
 })
 export class ViewRefComponent implements AfterViewInit {
   @ViewChild('template2') template: TemplateRef<{ $implicit: undefined }>;

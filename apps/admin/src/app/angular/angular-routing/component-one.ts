@@ -3,8 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Component({
-  selector: 'component-one',
-  template: `
+    selector: 'component-one',
+    template: `
     <ul>
       <li *ngFor="let user of users$ | async">
         <a
@@ -17,8 +17,8 @@ import { Observable } from 'rxjs';
       </li>
     </ul>
   `,
-  styles: [
-    `
+    styles: [
+        `
       .link {
         display: block;
       }
@@ -26,8 +26,9 @@ import { Observable } from 'rxjs';
         margin-bottom: 0;
       }
     `,
-  ],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    ],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export default class ComponentOneComponent implements OnInit {
   users$!: Observable<any[]>;

@@ -12,11 +12,10 @@ import { Overlay, OverlayModule, OverlayRef } from '@angular/cdk/overlay';
 import { TemplatePortal } from '@angular/cdk/portal';
 
 @Component({
-  selector: 'app-from-root-dropdown',
-  templateUrl: './dropdown.component.html',
-  standalone: true,
-  styleUrls: ['./dropdown.component.scss'],
-  imports: [DropdownTriggerDirective, DropdownComponent, OverlayModule],
+    selector: 'app-from-root-dropdown',
+    templateUrl: './dropdown.component.html',
+    styleUrls: ['./dropdown.component.scss'],
+    imports: [DropdownTriggerDirective, DropdownComponent, OverlayModule]
 })
 export class DropdownPageComponent {
   isOpen = false;

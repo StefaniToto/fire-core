@@ -9,10 +9,9 @@ import {
 import { JsonPipe, NgForOf } from '@angular/common';
 
 @Component({
-  selector: 'code-from-root-reactive-forms',
-  standalone: true,
-  imports: [FormsModule, ReactiveFormsModule, NgForOf, JsonPipe],
-  templateUrl: './reactive-forms.component.html',
+    selector: 'code-from-root-reactive-forms',
+    imports: [FormsModule, ReactiveFormsModule, NgForOf, JsonPipe],
+    templateUrl: './reactive-forms.component.html'
 })
 export class ReactiveFormsComponent {
   constructor(private fb: FormBuilder) {}

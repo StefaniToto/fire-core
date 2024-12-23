@@ -31,11 +31,10 @@ export enum DialogState {
 }
 
 @Component({
-  selector: 'code-from-root-rxjs-tutorial',
-  templateUrl: './rxjs-tutorial.component.html',
-  styleUrls: ['./rxjs-tutorial.component.css'],
-  imports: [CommonModule],
-  standalone: true,
+    selector: 'code-from-root-rxjs-tutorial',
+    templateUrl: './rxjs-tutorial.component.html',
+    styleUrls: ['./rxjs-tutorial.component.css'],
+    imports: [CommonModule]
 })
 export class RxjsTutorialComponent implements OnInit {
   // timer$ = interval(1000).subscribe(console.log);

@@ -2,11 +2,10 @@ import { AfterViewInit, Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
-  standalone: true,
-  selector: 'app-code-from-root-flexbox',
-  templateUrl: './flexbox.component.html',
-  styleUrls: ['./flexbox.component.scss'],
-  imports: [FormsModule],
+    selector: 'app-code-from-root-flexbox',
+    templateUrl: './flexbox.component.html',
+    styleUrls: ['./flexbox.component.scss'],
+    imports: [FormsModule]
 })
 export class FlexboxComponent implements AfterViewInit {
   direction: any = 1;
