@@ -15,10 +15,15 @@ import {
   pluck,
   switchMap,
   tap,
-  timer,
 } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { ajax } from 'rxjs/internal/ajax/ajax';
+import {
+  getObjectProps,
+  INameAgeNationalityRequired,
+  OptionalInterface,
+  pickObjectKeys,
+} from '../models/mapped-typed';
 export enum DialogState {
   success = 'success',
   failure = 'failure',
@@ -96,9 +101,28 @@ export class RxjsTutorialComponent implements OnInit {
     //     catchError((e) => return of(e))
     //   )
   }
+  readonlyValues: OptionalInterface<INameAgeNationalityRequired> = {
+    age: 1,
+    name: 'semanueal',
+    nationality: 'Nigerian',
+  };
 
   constructor() {
     // this.activeLayou = DialogState;
+    // console.log(
+    //   'mapped typed',
+    //   pickObjectKeys(this.readonlyValues, getObjectProps(this.readonlyValues))
+    // );
+
+    this.dynamicParams('something');
+  }
+
+  dynamicParams(param: string): void {
+    let newReaction = { [param]: param };
+    // let obj = {
+    //   param: param,
+    // };
+    console.log(newReaction, 'dynamicParams');
   }
   ngOnInit() {
     this.input$

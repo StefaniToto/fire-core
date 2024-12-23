@@ -41,13 +41,29 @@ export class SidenavComponent {
       ],
     },
     {
-      description: 'Angular',
-      path: '/angular',
+      description: 'RXJS',
+      path: '/rxjs',
       icon: 'fa fa-paint-brush',
       subItems: [
         {
           description: 'rxjs',
           path: '/angular/rxjs',
+        },
+      ],
+    },
+    {
+      description: 'Reactive Forms',
+      path: '/reactive-forms',
+      icon: 'fa fa-paint-brush',
+    },
+    {
+      description: 'Angular',
+      path: '/angular',
+      icon: 'fa fa-paint-brush',
+      subItems: [
+        {
+          description: 'routing',
+          path: '/angular/routing',
         },
       ],
     },

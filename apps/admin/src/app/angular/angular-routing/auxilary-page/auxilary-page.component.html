@@ -1,0 +1,7 @@
+<p>auxilary-page works!</p>
+<h1>User Details</h1>
+<section *ngIf="user$ | async as user">
+  <h4 class="mat-title">{{ user.name }}</h4>
+  <p class="mat-caption">{{ user.email }}</p>
+  <p class="mat-caption">User Id: {{ user.id }}</p>
+</section>

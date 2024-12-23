@@ -34,7 +34,11 @@ npx prisma studio
 
 
 ------precommits and linting===================
-npx husky-init && pnpm install 
+npx husky-init && pnpm install
 
 -----------run app-------------------------------
 nx run admin:serve
+
+
+npm i @schematics/angular
+ nx g c reactive-forms  --project=admin

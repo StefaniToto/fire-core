@@ -1,0 +1,22 @@
+<nav>
+  <!--  <a [routerLink]="['users']">Component One</a>-->
+  <a [routerLink]="[ { outlets: { sidebar: ['user', 4] } }]">
+    Component Aux
+  </a>
+
+  <a [routerLink]="[ { outlets: { sidebar: ['user', 2] } }]">
+    Component Aux
+  </a>
+</nav>
+
+<div style="color: green; margin-top: 1rem">Outlet:</div>
+<div
+  style="display: flex; justify-content: space-evenly; border: 2px solid green"
+>
+  <router-outlet></router-outlet>
+  <component-one></component-one>
+  <div style="color: green; margin-top: 1rem">Sidebar Outlet:</div>
+  <div style="border: 2px solid blue">
+    <router-outlet name="sidebar"></router-outlet>
+  </div>
+</div>

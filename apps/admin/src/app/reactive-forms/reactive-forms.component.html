@@ -1,0 +1,33 @@
+
+<div>
+  <h3>Thats a form of reactive forms</h3>
+  <input type="text" >
+</div>
+<div class="container" [formGroup]="form">
+  <br />
+
+  <button class="btn btn-primary" (click)="clearAllNameFields()">
+    Reset Name Field Values
+  </button>
+
+  <hr />
+
+  <pre>{{ form.get('stocks')?.value | json }}</pre>
+  One {{ this.getAttendeeGroups.at(0).get('name')?.value }}
+
+
+  @for (item of [1]; track item; let idx = $index) {
+  <div formArrayName="stocks">
+      <ng-container [formGroupName]="0">
+        <input formControlName="name"
+        /></ng-container>
+    </div>
+  }
+  <div >
+
+  Two  {{ this.getAttendeeGroups.at(0).get('name')?.value }}
+
+  </div>
+
+  <button (click)="reset()">Submitttt</button>
+</div>
