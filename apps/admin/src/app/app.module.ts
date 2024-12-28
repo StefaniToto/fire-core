@@ -32,14 +32,14 @@ export const appRoutes: Route[] = [
     path: 'custom-web-elements',
     loadChildren: () =>
       import('./custom-web-elemenets-module/custom-web.module').then(
-        (m) => m.CustomWebelementModule
+        (m) => m.CustomWebelementModule,
       ),
   },
   {
     path: 'rxjs',
     loadComponent: () =>
       import('./rxjs-tutorial/rxjs-tutorial.component').then(
-        (m) => m.RxjsTutorialComponent
+        (m) => m.RxjsTutorialComponent,
       ),
   },
 
@@ -47,7 +47,7 @@ export const appRoutes: Route[] = [
     path: 'reactive-forms',
     loadComponent: () =>
       import('./reactive-forms/reactive-forms.component').then(
-        (m) => m.ReactiveFormsComponent
+        (m) => m.ReactiveFormsComponent,
       ),
   },
 ];
@@ -63,11 +63,10 @@ export const appRoutes: Route[] = [
   ],
   imports: [
     FormsModule,
-    BrowserModule.withServerTransition({ appId: 'serverApp' }),
+    BrowserModule,
     RouterModule.forRoot(appRoutes, {
       initialNavigation: 'enabledBlocking',
     }),
-
     BrowserModule,
     HttpClientModule,
   ],

@@ -23,7 +23,7 @@
         "styles": [
           "apps/admin/src/styles.scss",
           "apps/admin/src/app/styles/style.scss",
-      
+
         ],
         "scripts": []
       },
@@ -49,7 +49,8 @@
           "vendorChunk": true,
           "extractLicenses": false,
           "sourceMap": true,
-          "namedChunks": true
+          "namedChunks": true,
+
         }
       },
       "defaultConfiguration": "production"
@@ -61,7 +62,8 @@
           "browserTarget": "admin:build:production"
         },
         "development": {
-          "browserTarget": "admin:build:development"
+          "buildTarget": "admin:build:development"
+
         }
       },
       "defaultConfiguration": "development"

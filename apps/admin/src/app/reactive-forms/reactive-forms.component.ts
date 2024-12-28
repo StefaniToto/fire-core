@@ -1,4 +1,10 @@
-import { ChangeDetectorRef, Component, inject, OnInit } from '@angular/core';
+import {
+  ChangeDetectorRef,
+  Component,
+  inject,
+  NgZone,
+  OnInit,
+} from '@angular/core';
 import {
   FormArray,
   FormBuilder,
@@ -9,9 +15,10 @@ import {
 import { JsonPipe, NgForOf } from '@angular/common';
 
 @Component({
-    selector: 'code-from-root-reactive-forms',
-    imports: [FormsModule, ReactiveFormsModule, NgForOf, JsonPipe],
-    templateUrl: './reactive-forms.component.html'
+  selector: 'code-from-root-reactive-forms',
+  standalone: true,
+  imports: [FormsModule, ReactiveFormsModule, JsonPipe],
+  templateUrl: './reactive-forms.component.html',
 })
 export class ReactiveFormsComponent {
   constructor(private fb: FormBuilder) {}
@@ -24,19 +31,26 @@ export class ReactiveFormsComponent {
   });
 
   cdr = inject(ChangeDetectorRef);
+  zone = inject(NgZone);
 
   reset() {
+    console.log(this.getAttendeeGroups.controls);
     this.admins.clear();
-    this.getAttendeeGroups.push(
-      this.fb.group({
-        stocks: this.fb.array([
-          this.fb.group({ name: 'wwwwww', age: 12 }),
-          this.fb.group({ name: 'Charlene', age: 13 }),
-          this.fb.group({ name: 'Nick', age: 14 }),
-          this.fb.group({ name: 'Joe', age: 15 }),
-        ]),
-      })
-    );
+    this.form.reset();
+    this.cdr.markForCheck();
+    this.getAttendeeGroups.push(this.fb.group({ name: 'Kristy', age: 12 }));
+    this.cdr.markForCheck();
+    this.cdr.detectChanges();
+
+    setTimeout(() => {
+      this.getAttendeeGroups.push(this.fb.group({ name: 'Kristy', age: 2 }));
+
+      this.getAttendeeGroups.push(this.fb.group({ name: '1111', age: 12 }));
+    }, 0);
+
+    this.zone.run(() => {
+      this.getAttendeeGroups.push(this.fb.group({ name: '2222222', age: 12 }));
+    });
   }
 
   get admins() {
@@ -47,6 +61,6 @@ export class ReactiveFormsComponent {
     stock.controls.forEach((stock) => stock.patchValue({ name: '' }));
   }
   get getAttendeeGroups(): FormArray {
-    return <FormArray>this.form.get('stocks');
+    return (<FormArray>this.form.get('stocks')) as FormArray;
   }
 }

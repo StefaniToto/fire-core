@@ -1,7 +1,6 @@
-
 <div>
   <h3>Thats a form of reactive forms</h3>
-  <input type="text" >
+  <input type="text" />
 </div>
 <div class="container" [formGroup]="form">
   <br />
@@ -15,19 +14,18 @@
   <pre>{{ form.get('stocks')?.value | json }}</pre>
   One {{ this.getAttendeeGroups.at(0).get('name')?.value }}
 
-
-  @for (item of [1]; track item; let idx = $index) {
   <div formArrayName="stocks">
-      <ng-container [formGroupName]="0">
+    @for (
+      item of getAttendeeGroups.controls;
+      track item.value.age;
+      let idx = $index
+    ) {
+      <ng-container [formGroupName]="idx">
         <input formControlName="name"
-        /></ng-container>
-    </div>
-  }
-  <div >
-
-  Two  {{ this.getAttendeeGroups.at(0).get('name')?.value }}
-
+      /></ng-container>
+    }
   </div>
+  <div>Two {{ this.getAttendeeGroups.at(0).get('name')?.value }}</div>
 
   <button (click)="reset()">Submitttt</button>
 </div>

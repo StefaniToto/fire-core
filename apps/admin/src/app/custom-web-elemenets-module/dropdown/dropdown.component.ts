@@ -6,16 +6,16 @@ import {
   ViewContainerRef,
   inject,
 } from '@angular/core';
-import { DropdownTriggerDirective } from './dropdown-trigger-directive';
 import { DropdownComponent } from './dropdown';
 import { Overlay, OverlayModule, OverlayRef } from '@angular/cdk/overlay';
 import { TemplatePortal } from '@angular/cdk/portal';
 
 @Component({
-    selector: 'app-from-root-dropdown',
-    templateUrl: './dropdown.component.html',
-    styleUrls: ['./dropdown.component.scss'],
-    imports: [DropdownTriggerDirective, DropdownComponent, OverlayModule]
+  selector: 'app-from-root-dropdown',
+  templateUrl: './dropdown.component.html',
+  styleUrls: ['./dropdown.component.scss'],
+  standalone: true,
+  imports: [OverlayModule],
 })
 export class DropdownPageComponent {
   isOpen = false;
