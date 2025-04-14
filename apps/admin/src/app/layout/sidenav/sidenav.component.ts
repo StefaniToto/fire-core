@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 
 @Component({
-    selector: 'app-sidenav',
-    templateUrl: './sidenav.component.html',
-    styleUrls: ['./sidenav.component.scss'],
-    standalone: false
+  selector: 'app-sidenav',
+  templateUrl: './sidenav.component.html',
+  styleUrls: ['./sidenav.component.scss'],
+  standalone: false,
 })
 export class SidenavComponent {
   public collapsed = false;
@@ -19,6 +19,10 @@ export class SidenavComponent {
         {
           description: 'Flex Box',
           path: '/design/flexbox',
+        },
+        {
+          description: 'Grid Box',
+          path: '/design/gridbox',
         },
         {
           description: 'Inputs',
@@ -59,12 +63,12 @@ export class SidenavComponent {
     },
     {
       description: 'Angular',
-      path: '/angular',
+      path: '/angular-router',
       icon: 'fa fa-paint-brush',
       subItems: [
         {
           description: 'routing',
-          path: '/angular/routing',
+          path: '/angular-router/users',
         },
       ],
     },

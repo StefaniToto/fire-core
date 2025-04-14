@@ -2,26 +2,14 @@
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
   "targetDefaults": {
     "build": {
-      "dependsOn": [
-        "^build"
-      ],
-      "inputs": [
-        "production",
-        "^production"
-      ]
+      "dependsOn": ["^build"],
+      "inputs": ["production", "^production"]
     },
     "test": {
-      "inputs": [
-        "default",
-        "^production",
-        "{workspaceRoot}/jest.preset.js"
-      ]
+      "inputs": ["default", "^production", "{workspaceRoot}/jest.preset.js"]
     },
     "e2e": {
-      "inputs": [
-        "default",
-        "^production"
-      ]
+      "inputs": ["default", "^production"]
     },
     "lint": {
       "inputs": [
@@ -32,10 +20,7 @@
     }
   },
   "namedInputs": {
-    "default": [
-      "{projectRoot}/**/*",
-      "sharedGlobals"
-    ],
+    "default": ["{projectRoot}/**/*", "sharedGlobals"],
     "production": [
       "default",
       "!{projectRoot}/**/?(*.)+(spec|test).[jt]s?(x)?(.snap)",
@@ -58,9 +43,20 @@
     },
     "@nrwl/angular:component": {
       "style": "scss"
+    },
+    "@nx/angular:component": {
+      "style": "css"
     }
   },
   "useInferencePlugins": false,
   "defaultBase": "master",
-  "useLegacyCache": true
+  "useLegacyCache": true,
+  "plugins": [
+    {
+      "plugin": "@nx/eslint/plugin",
+      "options": {
+        "targetName": "lint"
+      }
+    }
+  ]
 }

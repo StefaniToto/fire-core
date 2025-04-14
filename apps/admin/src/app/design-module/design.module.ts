@@ -12,6 +12,13 @@ export const appRoutes: Route[] = [
     loadComponent: () =>
       import('./flexbox/flexbox.component').then((m) => m.FlexboxComponent),
   },
+  {
+    path: 'gridbox',
+    loadComponent: () =>
+      import('./gridbox/grid-layout.component').then(
+        (m) => m.GridLayoutComponent,
+      ),
+  },
 ];
 @NgModule({
   declarations: [],
