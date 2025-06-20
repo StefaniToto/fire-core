@@ -1,0 +1,45 @@
+<div class="app-layout">
+  <aside class="sidebar" [class.open]="navOpen">
+    <div class="sidebar-header">
+      <h2>Menu</h2>
+      <button class="close-btn" (click)="toggleNav()">×</button>
+    </div>
+    <ul class="nav-links">
+      <li>
+        <a routerLink="/">Home</a>
+      </li>
+
+      <li>
+        <button class="dropdown-toggle" (click)="toggleSubmenu('about')">
+          Angular Concepts
+        </button>
+        <ul class="submenu" [class.open]="submenuOpen['about']">
+          <li><a routerLink="/angular/projection">Content Projection</a></li>
+          <li><a routerLink="/angular/context-guard">Context Guard</a></li>
+        </ul>
+      </li>
+
+      <li>
+        <button class="dropdown-toggle" (click)="toggleSubmenu('contact')">
+          Contact
+        </button>
+        <ul class="submenu" [class.open]="submenuOpen['contact']">
+          <li><a routerLink="/contact/email">Email</a></li>
+          <li><a routerLink="/contact/chat">Live Chat</a></li>
+        </ul>
+      </li>
+    </ul>
+
+  </aside>
+
+  <div class="main-content">
+    <header class="topbar">
+      <button class="menu-btn" (click)="toggleNav()">☰</button>
+      <h1>My App</h1>
+    </header>
+
+    <main class="content">
+      <router-outlet></router-outlet>
+    </main>
+  </div>
+</div>

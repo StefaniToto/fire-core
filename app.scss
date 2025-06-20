@@ -1,0 +1,144 @@
+$app-sidebar-width: 250px;
+$app-header-height: 60px;
+
+.app-layout {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+// Sidebar
+.sidebar {
+  width: $app-sidebar-width;
+  background-color: #222;
+  color: #fff;
+  flex-shrink: 0;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease-in-out;
+
+  .sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h2 {
+      margin: 0;
+    }
+
+    .close-btn {
+      background: none;
+      color: white;
+      border: none;
+      font-size: 1.5rem;
+      display: none;
+    }
+  }
+
+  .nav-links {
+    list-style: none;
+    padding: 0;
+
+    li {
+      margin-bottom: 1rem;
+
+      a,
+      .dropdown-toggle {
+        color: white;
+        text-decoration: none;
+        background: none;
+        border: none;
+        padding: 0;
+        font: inherit;
+        cursor: pointer;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+      .submenu {
+        list-style: none;
+        padding-left: 1rem;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+
+        li {
+          margin: 0.5rem 0;
+
+          a {
+            color: #ccc;
+            font-size: 0.95rem;
+
+            &:hover {
+              color: #fff;
+            }
+          }
+        }
+
+        &.open {
+          max-height: 500px; // Arbitrary large height for animation
+        }
+      }
+    }
+  }
+
+
+  @media (max-width: 768px) {
+    position: absolute;
+    height: 100%;
+    z-index: 10;
+    transform: translateX(-100%);
+    &.open {
+      transform: translateX(0);
+    }
+
+    .sidebar-header .close-btn {
+      display: block;
+    }
+  }
+}
+
+// Main content area
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+}
+
+// Topbar
+.topbar {
+  height: $app-header-height;
+  background-color: #1e1e2f;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+  justify-content: space-between;
+
+  .menu-btn {
+    background: none;
+    color: white;
+    font-size: 1.5rem;
+    border: none;
+    display: none;
+
+    @media (max-width: 768px) {
+      display: block;
+    }
+  }
+
+  h1 {
+    margin: 0;
+  }
+}
+
+// Main router content
+.content {
+  padding: 1rem;
+  background-color: #f4f4f4;
+  flex: 1;
+}
