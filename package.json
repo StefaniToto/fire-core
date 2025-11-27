@@ -37,7 +37,7 @@
     "@nestjs/passport": "^10.0.3",
     "@nestjs/platform-express": "10.4.15",
     "@nrwl/linter": "19.8.4",
-    "@prisma/client": "^6.1.0",
+    "@prisma/client": "^6.19.0",
     "@schematics/angular": "^19.0.6",
     "bcrypt": "^5.1.1",
     "class-validator": "^0.14.1",
@@ -77,6 +77,7 @@
     "lint-staged": "^15.2.11",
     "nx": "20.3.0",
     "prettier": "^3.4.2",
+    "prisma": "^7.0.1",
     "stylelint-config-standard-scss": "^14.0.0",
     "tslib": "^2.8.1",
     "typescript": "5.6.2"
